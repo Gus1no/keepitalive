@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Keep your device awake easily. Prevent your phone, tablet, or computer from sleeping with one click." />
+  <meta name="keywords" content="keep awake, prevent sleep, stay awake, device awake, no sleep, keepitalive" />
+  <meta property="og:title" content="Keep It Alive" />
+  <meta property="og:description" content="Keep your device awake easily. Prevent your phone, tablet, or computer from sleeping with one click." />
+  <meta property="og:image" content="https://keepitalive.app/assets/img/logo.png" />
+  <meta property="og:url" content="https://keepitalive.app" />
+  <meta name="twitter:card" content="summary" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Keep it alive</title>
+  <link rel="icon" href="./assets/img/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="./assets/img/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="tagline" aria-hidden="false">Keep your device awake</div>
+  <div class="subtitle" aria-hidden="true">Keep this window open, or the magic stops</div>
+    
+    <button id="keepBtn" aria-pressed="false">KEEP IT ALIVE</button>
+
+    <div class="time-controls">
+      <div class="presets" id="presets">
+        <button type="button" class="chip" data-min="15">15m</button>
+        <button type="button" class="chip" data-min="30">30m</button>
+        <button type="button" class="chip" data-min="60">1h</button>
+        <button type="button" class="chip" data-min="120">2h</button>
+        <button type="button" class="chip" data-min="240">4h</button>
+        <button type="button" class="chip" data-min="0">∞</button>
+      </div>
+      <div class="inline-input">
+        <button type="button" class="step" id="minus5">-5</button>
+        <!-- original hidden input, still used as source of truth -->
+        <form id="timerForm" class="form" onsubmit="return false;">
+          <label for="minutes">Time (min):</label>
+          <input id="minutes" type="number" min="1" step="1" value="60" />
+        </form>
+        <span class="label-minutes">Minutes:</span>
+        <input id="minutesVisible" type="number" min="1" step="1" value="60" />
+        <button type="button" class="step" id="plus5">+5</button>
+      </div>
+    </div>
+
+    <div id="countdown" class="countdown"></div>
+    <div class="fs-controls">
+      <button type="button" class="alt-btn" id="fsBlackBtn">Black Full Screen</button>
+      <button type="button" class="alt-btn" id="fsClockBtn">Full Screen Time</button>
+    </div>
+  </div>
+  <div id="overlay" aria-hidden="true">
+    <video id="overlayVideo" muted playsinline autoplay></video>
+  <div id="overlayMsg">Press Esc to exit full screen</div>
+  </div>
+  <!-- Full-screen overlays (exit on click/touch/ESC) -->
+  <div id="fsBlack" class="fs-screen" aria-hidden="true"></div>
+  <div id="fsClock" class="fs-screen" aria-hidden="true">
+    <div class="clock" id="clockDisplay">00:00:00</div>
+  </div>
+
+  <script type="module" src="./assets/js/app.js"></script>
+</body>
+
+  <footer class="github-footer">
+    <a href="https://github.com/Gus1no/keepitalive" target="_blank" rel="noopener" class="github-icon-footer" title="View on GitHub">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path fill="#fff" d="M12 2C6.477 2 2 6.484 2 12.012c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.37-1.342-3.37-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.091-.647.35-1.088.636-1.339-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.254-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.338 1.909-1.295 2.747-1.025 2.747-1.025.546 1.378.202 2.396.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.847-2.337 4.695-4.566 4.944.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.749 0 .268.18.579.688.481C19.138 20.19 22 16.436 22 12.012 22 6.484 17.523 2 12 2Z"/></svg>
+    </a>
+  </footer>
+</html>
