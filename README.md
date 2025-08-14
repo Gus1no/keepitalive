@@ -1,5 +1,4 @@
 # keepitalive
-# keepitalive
 Live: https://keepitalive.app
 
 Small web utility to prevent your device from sleeping, using the Wake Lock API when available and fallbacks (canvas/video or near‑silent audio) otherwise.
